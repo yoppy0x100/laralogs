@@ -1,0 +1,24 @@
+{
+    "name": "yoppy/laralogs",
+    "description": "Laravel Logger, Visitor Log, Activity Logger",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Yoppy0x100\\LaraLogs\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Yoppy Dimas",
+            "email": "anggaraputra456@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.2",
+        "jenssegers/agent" : "^2.6",
+        "mobiledetect/mobiledetectlib": "^2.7.6",
+        "jaybizzle/crawler-detect": "^1.2"
+    }
+}

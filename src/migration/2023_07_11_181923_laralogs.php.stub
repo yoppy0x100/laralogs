@@ -1,0 +1,46 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create(config('logs.table'), function (Blueprint $table) {
+            $table->bigIncrements('id');
+
+            $table->ipAddress('ip')->nullable();
+            $table->text('location')->nullable();
+            $table->string('method')->nullable();
+            $table->text('device')->nullable();
+            $table->mediumText('url')->nullable();
+            $table->mediumText('path')->nullable();
+            $table->text('browser')->nullable();
+            
+            $table->text('platform')->nullable();
+            $table->text('useragent')->nullable();
+            $table->text('languages')->nullable();
+            $table->mediumText('request')->nullable();
+            $table->mediumText('referer')->nullable();
+            $table->text('headers')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists(config('laralogs.table'));
+    }
+};
